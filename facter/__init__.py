@@ -50,10 +50,11 @@ def _parse_cli_facter_results(facter_results):
 
 class Facter(object):
 
-    def __init__(self, facter_path="facter", external_dir=None,
+    def __init__(self, facter_path="facter", external_dir=None, custom_dir=None,
                  use_yaml=True, cache_enabled=True, get_puppet_facts=False):
         self.facter_path = facter_path
         self.external_dir = external_dir
+        self.custom_dir = custom_dir
         self._use_yaml = use_yaml
         self.cache_enabled = cache_enabled
         self._get_puppet_facts = get_puppet_facts
@@ -80,6 +81,9 @@ class Facter(object):
         if self.external_dir is not None:
             args.append('--external-dir')
             args.append(self.external_dir)
+        if self.custom_dir is not None:
+            args.append('--custom-dir')
+            args.append(self.custom_dir)
         if self.uses_yaml:
             args.append("--yaml")
         if key is not None:

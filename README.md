@@ -63,3 +63,16 @@ Project State
 
 This is an alpha/early version and it hasn't been tested much. Please report any issues observed.
 
+Build
+--------------
+
+```shell
+python -m venv temp
+source temp/bin/activate
+pip install --upgrade pip setuptools
+pip install build
+python -m build build
+deactivate
+
+pip install dist/facterpy-0.2.tar.gz
+```

@@ -33,3 +33,9 @@ nosetests.xml
 .mr.developer.cfg
 .project
 .pydevproject
+
+# iwai
+.DS_Store
+._.DS_Store
+*.swp
+.history/
